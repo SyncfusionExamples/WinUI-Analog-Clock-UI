@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AnalogClockUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "AnalogClockUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

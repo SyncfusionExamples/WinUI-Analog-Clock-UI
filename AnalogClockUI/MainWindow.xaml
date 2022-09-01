@@ -1,0 +1,69 @@
+﻿<Window
+    x:Class="AnalogClockUI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AnalogClockUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:gauge="using:Syncfusion.UI.Xaml.Gauges"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <gauge:SfRadialGauge x:Name="mainDial">
+            <gauge:SfRadialGauge.Axes>
+                <gauge:RadialAxis StartAngle="270"
+                                  EndAngle="270"
+                                  Minimum="0"
+                                  Maximum="12"
+                                  ShowFirstLabel="False"
+                                  Interval="1"
+                                  MinorTicksPerInterval="4"
+                                  OffsetUnit="Factor"
+                                  LabelOffset="0.15"
+                                  TickOffset="0.03"
+                                  TickLengthUnit="Factor"
+                                  MinorTickLength="0.06"
+                                  MajorTickLength="0.1"
+                                  FontSize="18"
+                                  AxisLineWidthUnit="Factor"
+                                  AxisLineWidth="0.01"
+                                  >
+                    <gauge:RadialAxis.Pointers>
+                        <gauge:NeedlePointer x:Name="hoursPointer"
+                                             NeedleLength="0.6"
+                                             NeedleStartWidth="2"
+                                             NeedleEndWidth="5"
+                                             NeedleFill="#355c7d"
+                                             KnobRadius="0"
+                                             />
+                        <gauge:NeedlePointer x:Name="minsPointer"
+                                             NeedleLength="0.85"
+                                             NeedleStartWidth="1"
+                                             NeedleEndWidth="3"
+                                             NeedleFill="#355c7d"
+                                             KnobRadius="0.05"
+                                             KnobFill="#00a8b5"
+                                             />
+                        <gauge:NeedlePointer x:Name="secsPointer"
+                                             EnableAnimation="True"
+                                             AnimationDuration="800"
+                                             NeedleLength="0.9"
+                                             NeedleStartWidth="2"
+                                             NeedleEndWidth="2"
+                                             NeedleFill="#00a8b5"
+                                             TailLength="0.15"
+                                             TailWidth="2"
+                                             TailFill="#00a8b5"
+                                             KnobRadius="0.03"
+                                             KnobFill="White"
+                                             >
+                            <gauge:NeedlePointer.AnimationEasingFunction>
+                                <BounceEase Bounciness="8"/>
+                            </gauge:NeedlePointer.AnimationEasingFunction>
+                        </gauge:NeedlePointer>
+                    </gauge:RadialAxis.Pointers>
+                </gauge:RadialAxis>
+            </gauge:SfRadialGauge.Axes>
+        </gauge:SfRadialGauge>
+    </StackPanel>
+</Window>
